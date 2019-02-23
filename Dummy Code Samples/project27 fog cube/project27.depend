@@ -1,0 +1,43 @@
+# depslib dependency file v1.0
+1460305633 source:c:\users\black2\desktop\codeblocks projects\project27\project27main.cpp
+	"p27class.h"
+
+1460306975 c:\users\black2\desktop\codeblocks projects\project27\p27class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+	<stdlib.h>
+
+1460306661 source:c:\users\black2\desktop\codeblocks projects\project27\p27class.cpp
+	"p27class.h"
+
+1460305633 source:c:\users\black2\desktop\codeblocks projects\project27 fog cube\project27main.cpp
+	"p27class.h"
+
+1460306975 c:\users\black2\desktop\codeblocks projects\project27 fog cube\p27class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+	<stdlib.h>
+
+1460309136 source:c:\users\black2\desktop\codeblocks projects\project27 fog cube\p27class.cpp
+	"p27class.h"
+
+1460305555 source:d:\codes and programming\codeblocks projects opengl c++\project27 fog cube\p27class.cpp
+	"p27class.h"
+
+1483029045 d:\codes and programming\codeblocks projects opengl c++\project27 fog cube\p27class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+	<stdlib.h>
+
+1483029111 source:d:\codes and programming\codeblocks projects opengl c++\project27 fog cube\project27main.cpp
+	"p27class.h"
+

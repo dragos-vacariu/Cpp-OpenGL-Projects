@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1458936449 source:c:\users\black2\desktop\codeblocks projects\project2\project2main.cpp
+	"p2class.h"
+
+1458936449 c:\users\black2\desktop\codeblocks projects\project2\p2class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<stdio.h>
+
+1458940864 source:c:\users\black2\desktop\codeblocks projects\project2\p2class.cpp
+	"p2class.h"
+

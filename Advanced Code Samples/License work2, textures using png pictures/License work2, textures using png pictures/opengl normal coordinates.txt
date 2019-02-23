@@ -1,0 +1,10 @@
+glBegin(GL_QUADS);
+	glTexCoord2f(0.0,1.0);
+        glVertex2f(100, 200);
+        glTexCoord2f(1.0,1.0);
+        glVertex2f(400, 200);
+        glTexCoord2f(1.0,0.0);
+        glVertex2f(400, 400);
+        glTexCoord2f(0.0,0.0);
+        glVertex2f(100, 400);		
+glEnd();

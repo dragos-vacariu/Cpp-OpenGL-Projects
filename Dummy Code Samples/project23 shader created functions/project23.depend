@@ -1,0 +1,18 @@
+# depslib dependency file v1.0
+1460140273 source:c:\users\black2\desktop\codeblocks projects\project23\p23class.cpp
+	"p23class.h"
+
+1460227183 c:\users\black2\desktop\codeblocks projects\project23\p23class.h
+	<glew.h>
+	<SDL.h>
+	<stdlib.h>
+	<conio.h>
+	<iostream>
+	<fstream>
+	<string>
+	<glm/glm.hpp>
+	<glm/gtx/transform.hpp>
+
+1459894068 source:c:\users\black2\desktop\codeblocks projects\project23\project23main.cpp
+	"p23class.h"
+

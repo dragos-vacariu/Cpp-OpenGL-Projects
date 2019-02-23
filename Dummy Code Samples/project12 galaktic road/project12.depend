@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1459189785 source:c:\users\black2\desktop\codeblocks projects\project12\project12main.cpp
+	"p12class.h"
+
+1459192242 c:\users\black2\desktop\codeblocks projects\project12\p12class.h
+	<SDL.h>
+	<glew.h>
+	<conio.h>
+	<iostream>
+
+1459189670 source:c:\users\black2\desktop\codeblocks projects\project12\p12class.cpp
+	"p12class.h"
+
+1459243379 source:c:\users\black2\desktop\codeblocks projects\project12 unfinished\project12main.cpp
+	"p12class.h"
+
+1459243455 c:\users\black2\desktop\codeblocks projects\project12 unfinished\p12class.h
+	<SDL.h>
+	<glew.h>
+	<conio.h>
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+
+1459243023 source:c:\users\black2\desktop\codeblocks projects\project12 unfinished\p12class.cpp
+	"p12class.h"
+

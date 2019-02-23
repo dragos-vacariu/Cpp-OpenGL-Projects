@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1459639159 source:c:\users\black2\desktop\codeblocks projects\project20\project20main.cpp
+	"p20class.h"
+	"glslprogram.h"
+
+1459686834 c:\users\black2\desktop\codeblocks projects\project20\p20class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<string.h>
+	<sstream>
+	<fstream>
+
+1459698710 source:c:\users\black2\desktop\codeblocks projects\project20\p20class.cpp
+	"p20class.h"
+
+1459636272 source:c:\users\black2\desktop\codeblocks projects\project20\glslprogram.cpp
+	"glslprogram.h"
+
+1459634409 c:\users\black2\desktop\codeblocks projects\project20\glslprogram.h
+	<glew.h>
+	<string.h>
+	<iostream>
+	<fstream>
+	<vector>
+

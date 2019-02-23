@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1459552461 source:c:\users\black2\desktop\codeblocks projects\project19\p19class.cpp
+	"p19class.h"
+
+1459552784 c:\users\black2\desktop\codeblocks projects\project19\p19class.h
+	<glew.h>
+	<SDL.h>
+	<conio.h>
+	<iostream>
+
+1459551687 source:c:\users\black2\desktop\codeblocks projects\project19\project19main.cpp
+	"p19class.h"
+
+1459551687 source:c:\users\black2\desktop\codeblocks projects\project19 draw with buffers\project19main.cpp
+	"p19class.h"
+
+1459614401 c:\users\black2\desktop\codeblocks projects\project19 draw with buffers\p19class.h
+	<glew.h>
+	<SDL.h>
+	<conio.h>
+	<iostream>
+
+1459615261 source:c:\users\black2\desktop\codeblocks projects\project19 draw with buffers\firstshader.cpp
+
+1459617174 source:c:\users\black2\desktop\codeblocks projects\project19 draw with buffers\p19class.cpp
+	"p19class.h"
+
+1459615261 source:c:\users\black2\desktop\codeblocks projects\project19 draw with buffers unfinished\firstshader.cpp
+
+1459551687 source:c:\users\black2\desktop\codeblocks projects\project19 draw with buffers unfinished\project19main.cpp
+	"p19class.h"
+
+1459614401 c:\users\black2\desktop\codeblocks projects\project19 draw with buffers unfinished\p19class.h
+	<glew.h>
+	<SDL.h>
+	<conio.h>
+	<iostream>
+
+1459551687 source:c:\users\black2\desktop\codeblocks projects\project19 draw with buffers, first shaders\project19main.cpp
+	"p19class.h"
+
+1459614401 c:\users\black2\desktop\codeblocks projects\project19 draw with buffers, first shaders\p19class.h
+	<glew.h>
+	<SDL.h>
+	<conio.h>
+	<iostream>
+

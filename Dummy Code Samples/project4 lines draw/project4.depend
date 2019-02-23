@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1458952691 source:c:\users\black2\desktop\codeblocks projects\project4\p4class.cpp
+	"p4class.h"
+
+1458949107 c:\users\black2\desktop\codeblocks projects\project4\p4class.h
+	<iostream>
+	<glew.h>
+	<SDL.h>
+	<stdlib.h>
+	<conio.h>
+
+1458949136 source:c:\users\black2\desktop\codeblocks projects\project4\project4main.cpp
+	"p4class.h"
+

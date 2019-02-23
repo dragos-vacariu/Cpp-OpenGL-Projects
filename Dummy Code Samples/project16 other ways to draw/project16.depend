@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1459457924 source:c:\users\black2\desktop\codeblocks projects\project16\p16class.cpp
+	"p16class.h"
+
+1459457909 c:\users\black2\desktop\codeblocks projects\project16\p16class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+
+1459457989 source:c:\users\black2\desktop\codeblocks projects\project16\project16main.cpp
+	"p16class.h"
+
+1459457989 source:c:\users\black2\desktop\codeblocks projects\project16 other ways to draw\project16main.cpp
+	"p16class.h"
+
+1459457909 c:\users\black2\desktop\codeblocks projects\project16 other ways to draw\p16class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+
+1459464999 source:c:\users\black2\desktop\codeblocks projects\project16 other ways to draw\p16class.cpp
+	"p16class.h"
+

@@ -1,0 +1,176 @@
+# depslib dependency file v1.0
+1532854261 source:c:\users\black\desktop\license work\main license work\main.cpp
+	<SDL_mixer.h>
+	"Route.h"
+	"Car.h"
+	"Window.h"
+
+1532287921 source:c:\users\black\desktop\license work\main license work\src\car.cpp
+	"../include/Car.h"
+	<time.h>
+
+1532368481 c:\users\black\desktop\license work\main license work\include\car.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<SOIL.h>
+	<vector>
+	<string>
+	<time.h>
+	"Window.h"
+	"Route.h"
+
+1532184897 c:\users\black\desktop\license work\main license work\include\functions.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+
+1532181369 c:\users\black\desktop\license work\main license work\src\functions.cpp
+	<iostream>
+
+1532181369 source:c:\users\black\desktop\license work\main license work\src\functions.cpp
+	<iostream>
+
+1532368434 c:\users\black\desktop\license work\main license work\src\car.cpp
+	"../include/Car.h"
+	<time.h>
+
+1215443608 source:c:\users\black\desktop\license work\main license work\src\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1532272021 source:c:\users\black\desktop\license work\main license work\src\window.cpp
+	"Window.h"
+	"Car.h"
+
+1532286757 c:\users\black\desktop\license work\main license work\include\window.h
+	<glew.h>
+	<iostream>
+	<SOIL.h>
+	<SDL.h>
+	<stdlib.h>
+	"Car.h"
+
+1532199338 c:\users\black\desktop\license work\main license work\include\common.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<SOIL.h>
+
+1532200222 c:\users\black\desktop\license work\main license work\src\common.cpp
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<SOIL.h>
+	"Window.h"
+
+1532199691 source:c:\users\black\desktop\license work\main license work\src\common.cpp
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<SOIL.h>
+
+1532368790 c:\users\black\desktop\license work\main license work\include\route.h
+	"Car.h"
+	"../src/Car.cpp"
+
+1532852473 source:c:\users\black\desktop\license work\main license work\car.cpp
+	"Car.h"
+
+1532854133 c:\users\black\desktop\license work\main license work\car.h
+	<SDL.h>
+	<glew.h>
+	<SOIL.h>
+	<vector>
+	<string>
+	<time.h>
+	<stdlib.h>
+	<iostream>
+
+1532854499 c:\users\black\desktop\license work\main license work\window.h
+	"Car.h"
+
+1532854390 c:\users\black\desktop\license work\main license work\route.h
+	"Car.h"
+
+1215443608 source:c:\users\black\desktop\license work\main license work\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1532852329 source:c:\users\black\desktop\license work\main license work\window.cpp
+	"Window.h"
+
+1532853056 source:c:\users\black\desktop\license work\main license work\route.cpp
+	"Route.h"
+
+1532725270 c:\users\black\desktop\license work\main license work\common.h
+	<iostream>
+
+1532856073 source:c:\users\hp probook 6460b\desktop\license work\main license work\car.cpp
+	"Car.h"
+
+1532857733 c:\users\hp probook 6460b\desktop\license work\main license work\car.h
+	<SDL.h>
+	<glew.h>
+	<SOIL.h>
+	<vector>
+	<string>
+	<time.h>
+	<stdlib.h>
+	<iostream>
+
+1532857861 source:c:\users\hp probook 6460b\desktop\license work\main license work\main.cpp
+	<SDL_mixer.h>
+	"Route.h"
+	"Car.h"
+	"Window.h"
+
+1532857990 c:\users\hp probook 6460b\desktop\license work\main license work\route.h
+	"Car.h"
+
+1532858099 c:\users\hp probook 6460b\desktop\license work\main license work\window.h
+	"Car.h"
+
+1532856656 source:c:\users\hp probook 6460b\desktop\license work\main license work\route.cpp
+	"Route.h"
+
+1215447208 source:c:\users\hp probook 6460b\desktop\license work\main license work\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1532855929 source:c:\users\hp probook 6460b\desktop\license work\main license work\window.cpp
+	"Window.h"
+

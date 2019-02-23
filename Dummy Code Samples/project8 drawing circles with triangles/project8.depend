@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1459012679 source:c:\users\black2\desktop\codeblocks projects\project8\p8class.cpp
+	"p8class.h"
+
+1459012452 c:\users\black2\desktop\codeblocks projects\project8\p8class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+
+1459012798 source:c:\users\black2\desktop\codeblocks projects\project8\project8main.cpp
+	"p8class.h"
+

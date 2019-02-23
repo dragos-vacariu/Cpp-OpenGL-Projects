@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1461185225 source:c:\users\black2\desktop\codeblocks projects\project38\p38class.cpp
+	"p38class.h"
+
+1461185353 c:\users\black2\desktop\codeblocks projects\project38\p38class.h
+	<iostream>
+	<SDL.h>
+	<glew.h>
+	<conio.h>
+	<stdlib.h>
+
+1461185238 source:c:\users\black2\desktop\codeblocks projects\project38\project38main.cpp
+	"p38class.h"
+
+1461183306 source:d:\codes and programming\codeblocks projects opengl c++\project38 sdl, rotating triangle\p38class.cpp
+	"p38class.h"
+
+1461181753 d:\codes and programming\codeblocks projects opengl c++\project38 sdl, rotating triangle\p38class.h
+	<iostream>
+	<SDL.h>
+	<glew.h>
+	<conio.h>
+	<stdlib.h>
+
+1461181638 source:d:\codes and programming\codeblocks projects opengl c++\project38 sdl, rotating triangle\project38main.cpp
+	"p38class.h"
+

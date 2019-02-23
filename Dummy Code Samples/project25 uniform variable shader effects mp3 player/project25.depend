@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1460149234 source:c:\users\black2\desktop\codeblocks projects\project25\p25class.cpp
+	"p25class.h"
+
+1459797170 c:\users\black2\desktop\codeblocks projects\project25\p25class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1460149196 source:c:\users\black2\desktop\codeblocks projects\project25\project25main.cpp
+	"p25class.h"
+
+1460149196 source:c:\users\black2\desktop\codeblocks projects\project25 uniform variable shader effects\project25main.cpp
+	"p25class.h"
+
+1460213312 c:\users\black2\desktop\codeblocks projects\project25 uniform variable shader effects\p25class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<SDL_mixer.h>
+
+1460215873 source:c:\users\black2\desktop\codeblocks projects\project25 uniform variable shader effects\p25class.cpp
+	"p25class.h"
+
+1460149196 source:c:\users\black2\desktop\codeblocks projects\project25 uniform variable shader effects mp3 player\project25main.cpp
+	"p25class.h"
+
+1460220482 c:\users\black2\desktop\codeblocks projects\project25 uniform variable shader effects mp3 player\p25class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<fstream>
+	<string>
+	<stdlib.h>
+	<SDL_mixer.h>
+
+1460218365 source:c:\users\black2\desktop\codeblocks projects\project25 uniform variable shader effects mp3 player\p25class.cpp
+	"p25class.h"
+	<SDL_mixer.h>
+

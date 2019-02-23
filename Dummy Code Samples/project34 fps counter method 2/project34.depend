@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1460840701 source:c:\users\black2\desktop\codeblocks projects\project34\p34class.cpp
+	"p34class.h"
+
+1460840608 c:\users\black2\desktop\codeblocks projects\project34\p34class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<stdlib.h>
+
+1460835160 source:c:\users\black2\desktop\codeblocks projects\project34\project34main.cpp
+	"p34class.h"
+
+1460843061 source:c:\users\black2\desktop\codeblocks projects\project34 fps counter method 2\p34class.cpp
+	"p34class.h"
+
+1460840608 c:\users\black2\desktop\codeblocks projects\project34 fps counter method 2\p34class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<stdlib.h>
+
+1460835160 source:c:\users\black2\desktop\codeblocks projects\project34 fps counter method 2\project34main.cpp
+	"p34class.h"
+

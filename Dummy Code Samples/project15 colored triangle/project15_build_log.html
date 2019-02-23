@@ -1,0 +1,62 @@
+<html>
+<head>
+<title>project15 build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>30-03-2016 at 22:24.20</u><br />
+Build ended on: <u>31-03-2016 at 23:13.34</u><p />
+<b>-------------- Build: Debug in project15 (compiler: GNU GCC Compiler)---------------</b><br />
+mingw32-g++.exe -Wall -g -std=c++11 -I"C:\sdl libraries\i686-w64-mingw32\include" -c "C:\Users\Black2\Desktop\codeblocks projects\project15\p15class.cpp" -o obj\Debug\p15class.o<br />
+C:\Users\Black2\Desktop\codeblocks projects\project15\p15class.cpp: In member function 'SDL_Window* p15class::init()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project15\p15class.cpp:17:19: warning: variable 'context' set but not used [-Wunused-but-set-variable]</font><br />
+     SDL_GLContext context;<br />
+                   ^<br />
+mingw32-g++.exe -L"C:\sdl libraries\i686-w64-mingw32\lib" -o bin\Debug\project15.exe obj\Debug\p15class.o obj\Debug\project15main.o  -lmingw32 -lSDL2main -lSDL2 -lglu32 -lOpenGL32 -lglfw3 -glfw3dll  "C:\sdl libraries\i686-w64-mingw32\lib\glew32.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mx.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mxs.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32s.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glfw3dll.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglfw3.a"<br />
+Output file is bin\Debug\project15.exe with size 1.05 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minute(s), 1 second(s))</font><br />
+<font color="#0000ff">0 error(s), 1 warning(s) (0 minute(s), 1 second(s))</font><br />
+<b>-------------- Run: Debug in project15 (compiler: GNU GCC Compiler)---------------</b><br />
+<font color="#a00000">Process terminated with status -1073741510 (0 minute(s), 7 second(s))</font><br />
+<b>-------------- Run: Debug in project15 (compiler: GNU GCC Compiler)---------------</b><br />
+<font color="#a00000">Process terminated with status -1073741510 (0 minute(s), 4 second(s))</font><br />
+<b>-------------- Build file: "no target" in "no project" (compiler: unknown)---------------</b><br />
+mingw32-g++.exe -std=c++11 -I"C:\sdl libraries\i686-w64-mingw32\include" -c C:\Users\Black2\Desktop\aaa.cpp -o C:\Users\Black2\Desktop\aaa.o<br />
+C:\Users\Black2\Desktop\aaa.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\aaa.cpp:5:17: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+     char *aaa = "Window";<br />
+                 ^<br />
+<font color="#ff0000">C:\Users\Black2\Desktop\aaa.cpp:6:5: error: 'cout' was not declared in this scope</font><br />
+     cout &lt;&lt; aaa &lt;&lt; endl;<br />
+     ^<br />
+C:\Users\Black2\Desktop\aaa.cpp:6:5: note: suggested alternative:<br />
+In file included from C:\Users\Black2\Desktop\aaa.cpp:1:0:<br />
+C:/Program Files/codeblocks/MinGW/lib/gcc/mingw32/4.9.2/include/c++/iostream:61:18: note:   'std::cout'<br />
+   extern ostream cout;  /// Linked to standard output<br />
+                  ^<br />
+<font color="#ff0000">C:\Users\Black2\Desktop\aaa.cpp:6:20: error: 'endl' was not declared in this scope</font><br />
+     cout &lt;&lt; aaa &lt;&lt; endl;<br />
+                    ^<br />
+C:\Users\Black2\Desktop\aaa.cpp:6:20: note: suggested alternative:<br />
+In file included from C:/Program Files/codeblocks/MinGW/lib/gcc/mingw32/4.9.2/include/c++/iostream:39:0,<br />
+                 from C:\Users\Black2\Desktop\aaa.cpp:1:<br />
+C:/Program Files/codeblocks/MinGW/lib/gcc/mingw32/4.9.2/include/c++/ostream:564:5: note:   'std::endl'<br />
+     endl(basic_ostream&lt;_CharT, _Traits&gt;&amp; __os)<br />
+     ^<br />
+<font color="#a00000">Process terminated with status 1 (0 minute(s), 2 second(s))</font><br />
+<font color="#a00000">2 error(s), 1 warning(s) (0 minute(s), 2 second(s))</font><br />
+<b>-------------- Build file: "no target" in "no project" (compiler: unknown)---------------</b><br />
+mingw32-g++.exe -std=c++11 -I"C:\sdl libraries\i686-w64-mingw32\include" -c C:\Users\Black2\Desktop\aaa.cpp -o C:\Users\Black2\Desktop\aaa.o<br />
+C:\Users\Black2\Desktop\aaa.cpp: In function 'int main()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\aaa.cpp:6:17: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+     char *aaa = "Window";<br />
+                 ^<br />
+mingw32-g++.exe -L"C:\sdl libraries\i686-w64-mingw32\lib" -o C:\Users\Black2\Desktop\aaa.exe C:\Users\Black2\Desktop\aaa.o  -lmingw32 -lSDL2main -lSDL2 -lglu32 -lOpenGL32 -lglfw3 -glfw3dll  "C:\sdl libraries\i686-w64-mingw32\lib\glew32.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mx.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mxs.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32s.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glfw3dll.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglfw3.a"<br />
+C:/Program Files/codeblocks/MinGW/bin/../lib/gcc/mingw32/4.9.2/../../../../mingw32/bin/ld.exe: reopening C:\Users\Black2\Desktop\aaa.exe: Permission denied<br />
+C:/Program Files/codeblocks/MinGW/bin/../lib/gcc/mingw32/4.9.2/../../../../mingw32/bin/ld.exe: final link failed: Permission denied<br />
+<font color="#ff0000">collect2.exe: error: ld returned 1 exit status</font><br />
+<font color="#a00000">Process terminated with status 1 (0 minute(s), 2 second(s))</font><br />
+<font color="#a00000">1 error(s), 1 warning(s) (0 minute(s), 2 second(s))</font><br />
+</tt>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1459975540 source:c:\users\black2\desktop\codeblocks projects\project24\project24main.cpp
+	"p24class.h"
+
+1459977053 c:\users\black2\desktop\codeblocks projects\project24\p24class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+

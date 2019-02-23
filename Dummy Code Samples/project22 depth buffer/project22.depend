@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1459794264 source:c:\users\black2\desktop\codeblocks projects\project22\p22class.cpp
+	"p22class.h"
+
+1459797170 c:\users\black2\desktop\codeblocks projects\project22\p22class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<fstream>
+	<string>
+	<stdlib.h>
+
+1459794347 source:c:\users\black2\desktop\codeblocks projects\project22\project22main.cpp
+	"p22class.h"
+

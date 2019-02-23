@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1459004944 source:c:\users\black2\desktop\codeblocks projects\project7\project7main.cpp
+	"p7class.h"
+
+1458990726 c:\users\black2\desktop\codeblocks projects\project7\p7class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+
+1459005900 source:c:\users\black2\desktop\codeblocks projects\project7\p7class.cpp
+	"p7class.h"
+

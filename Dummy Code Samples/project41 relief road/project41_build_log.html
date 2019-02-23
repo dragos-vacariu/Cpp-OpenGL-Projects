@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>project41 build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>21-05-2016 at 00:55.23</u><br />
+Build ended on: <u>21-05-2016 at 00:55.27</u><p />
+<b>-------------- Build: Debug in project41 (compiler: GNU GCC Compiler)---------------</b><br />
+mingw32-g++.exe -Wall -g -std=c++11 -I"C:\sdl libraries\i686-w64-mingw32\include" -I"C:\sdl libraries\i686-w64-mingw32\glfw3\src" -c "C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp" -o obj\Debug\p41class.o<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:12:93: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+ char* stages [6] {"grass4.jpg", "dirt.png", "water.jpg", "sand.jpg", "grass5.png", "dry.jpg"};<br />
+                                                                                             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:12:93: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:12:93: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:12:93: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:12:93: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:12:93: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp: In member function 'SDL_Window* p12class::init()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:78:19: warning: variable 'context' set but not used [-Wunused-but-set-variable]</font><br />
+     SDL_GLContext context; //get a context called context.<br />
+                   ^<br />
+C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp: In member function 'void p12class::playtrack()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:397:29: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+         case '1': {filename ="t1.wav"; break;}<br />
+                             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:398:29: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+         case '2': {filename ="t2.wav"; break;}<br />
+                             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:399:29: warning: deprecated conversion from string constant to 'char*' [-Wwrite-strings]</font><br />
+         case '3': {filename ="t3.wav"; break;}<br />
+                             ^<br />
+C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp: In member function 'void p12class::collisiondetection()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:435:31: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+         if(player[4]&gt;field[0] &amp;&amp; player[4]&lt;field[2] || player[4]&gt;field[8] &amp;&amp; player[4]&lt;field[10])//260<br />
+                               ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:444:31: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+         if(player[0]&lt;field[2] &amp;&amp; player[0]&gt;field[0] || player[0]&lt;field[10] &amp;&amp; player[0]&gt;field[8])<br />
+                               ^<br />
+C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp: In member function 'void p12class::frontcollision()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:457:31: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+   if(player[1]+(x-1)&lt;=field[1]&amp;&amp;player[1]+(x-1)&gt;=field[7] || player[1]+(x-1)&lt;=field[9]&amp;&amp;player[1]+(x-1)&gt;=field[15]) //if the obstacles are on the same y line with the player<br />
+                               ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:460:38: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+         if( player[0]&gt;=(field[0]-25) &amp;&amp; player[2] &lt;= (field[2]+25) || player[0]&gt;=(field[8]-25) &amp;&amp; player[2] &lt;= (field[10]+25))<br />
+                                      ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:462:39: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+             if(player[2]+5&gt;field[0]-5 &amp;&amp; player[2]+5&lt;field[0]+16 || player[2]+5&gt;field[8]-5 &amp;&amp; player[2]+5&lt;field[8]+16)//push left<br />
+                                       ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:476:39: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+             if(player[2]-5&lt;field[2]+5 &amp;&amp; player[2]-5&gt;field[0]+16 || player[2]-5&lt;field[10]+5 &amp;&amp; player[2]-5&gt;field[8]+16)//push right<br />
+                                       ^<br />
+C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp: In member function 'void p12class::distancetravel()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:516:15: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+     if(speed&lt;3&amp;&amp;speed&gt;2 || speed&lt;2&amp;&amp;speed&gt;1 || speed&lt;1&amp;&amp;speed&gt;0)<br />
+               ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:516:55: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+     if(speed&lt;3&amp;&amp;speed&gt;2 || speed&lt;2&amp;&amp;speed&gt;1 || speed&lt;1&amp;&amp;speed&gt;0)<br />
+                                                       ^<br />
+C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp: In member function 'void p12class::scoremultiplier()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project41 relief road\p41class.cpp:603:38: warning: suggest parentheses around '&amp;&amp;' within '||' [-Wparentheses]</font><br />
+         if( player[0]&gt;=(field[6]-50) &amp;&amp; player[2] &lt;= (field[2]+50) || player[0]&gt;=(field[14]-50) &amp;&amp; player[2] &lt;= (field[10]+50))<br />
+                                      ^<br />
+mingw32-g++.exe -L"C:\sdl libraries\i686-w64-mingw32\lib" -o bin\Debug\project41.exe obj\Debug\p41class.o obj\Debug\project41main.o obj\Debug\SOIL.o  -lmingw32 -lglu32 -lOpenGL32 -lSDL2_mixer -lSDL2_ttf -lSDL2_test -lSDL2main -lSDL2  "C:\sdl libraries\i686-w64-mingw32\lib\glew32.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mx.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mxs.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32s.lib" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32.dll.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32mx.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32mx.dll.a" "C:\sdl libraries\i686-w64-mingw32\lib\libSOIL.a" "C:\sdl libraries\i686-w64-mingw32\lib\glfw3dll.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglfw3.a"<br />
+Output file is bin\Debug\project41.exe with size 1.15 MB<br />
+<font color="#0000ff">Process terminated with status 0 (0 minute(s), 4 second(s))</font><br />
+<font color="#0000ff">0 error(s), 19 warning(s) (0 minute(s), 4 second(s))</font><br />
+</tt>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Create a new project.
+Go to the properties of your new project
+Go to Properties -> C/C++ -> General -> Additional Dependecies -> and add there the "include" directories of your libraries
+Go to Properties -> Linker -> General -> Additional Libraries -> and add there the "lib" directories of your libraries
+Go to Properties -> Linker -> Input -> Additional Dependecies -> and add there the name of your "lib files" from the
+"lib" directories added above
+Go to your libraries bin directory and copy those dll files to your windows/system32 or whatever your .exe file from
+your project will be generated.
+
+Thats all!
+
+The other way:
+Go to: Microsoft Visual Studio installation directory/VC and copy the include directory content, into the include directory 
+placed there.
+-> and then copy also the lib directory content into the lib folder placed there.
+-> and then copy the bin directory content into the bin folder placed there.
+
+Finally after creating a project go to project Properties->Linker->Input-> Additional Dependencies -> and add there the
+name of all the lib files that you just copied to lib folder.
+
+That's all. (THE LAST STEPT NEEDS TO BE DONE FOR EACH PROJECT.)

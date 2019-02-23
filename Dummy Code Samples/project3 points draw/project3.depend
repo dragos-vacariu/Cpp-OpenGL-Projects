@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1458942040 source:c:\users\black2\desktop\codeblocks projects\project3\project3main.cpp
+	"p3class.h"
+
+1458942040 c:\users\black2\desktop\codeblocks projects\project3\p3class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+

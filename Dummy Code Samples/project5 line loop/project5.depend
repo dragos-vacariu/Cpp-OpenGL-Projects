@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1458990810 source:c:\users\black2\desktop\codeblocks projects\project5\project5main.cpp
+	"p5class.h"
+
+1458990726 c:\users\black2\desktop\codeblocks projects\project5\p5class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+
+1458990726 source:c:\users\black2\desktop\codeblocks projects\project5\p5class.cpp
+	"p5class.h"
+

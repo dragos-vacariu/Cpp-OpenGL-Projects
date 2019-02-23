@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1459722299 source:c:\users\black2\desktop\codeblocks projects\project21\p20class.cpp
+	"p20class.h"
+
+1459724812 c:\users\black2\desktop\codeblocks projects\project21\p20class.h
+	<glew.h>
+	<SDL.h>
+	<iostream>
+	<conio.h>
+	<string>
+	<stdlib.h>
+	<stdio.h>
+	<fstream>
+
+1459709652 source:c:\users\black2\desktop\codeblocks projects\project21\project21main.cpp
+	"p20class.h"
+
+1459780109 source:d:\codes and programming\codeblocks projects opengl c++\project21 self-made shaders\p20class.cpp
+	"p20class.h"
+
+1483018049 d:\codes and programming\codeblocks projects opengl c++\project21 self-made shaders\p20class.h
+	<GL/glew.h>
+	<SDL2/SDL.h>
+	<iostream>
+	<conio.h>
+	<string>
+	<stdlib.h>
+	<stdio.h>
+	<fstream>
+
+1483018132 source:d:\codes and programming\codeblocks projects opengl c++\project21 self-made shaders\project21main.cpp
+	"p20class.h"
+

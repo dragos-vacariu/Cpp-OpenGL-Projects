@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1459003503 source:c:\users\black2\desktop\codeblocks projects\project6\project6main.cpp
+	"p6class.h"
+
+1458990726 c:\users\black2\desktop\codeblocks projects\project6\p6class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+

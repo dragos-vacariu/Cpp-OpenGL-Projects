@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1459540101 source:c:\users\black2\desktop\codeblocks projects\project18 lighting\project18main.cpp
+	"p18class.h"
+
+1459038161 c:\users\black2\desktop\codeblocks projects\project18 lighting\p18class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+
+1459540101 source:c:\users\black2\desktop\codeblocks projects\project18 lighting cube\project18main.cpp
+	"p18class.h"
+
+1459038161 c:\users\black2\desktop\codeblocks projects\project18 lighting cube\p18class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+
+1459967817 source:c:\users\black2\desktop\codeblocks projects\project18 lighting cube\p18class.cpp
+	"p18class.h"
+

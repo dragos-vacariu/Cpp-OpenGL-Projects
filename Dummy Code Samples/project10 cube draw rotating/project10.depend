@@ -1,0 +1,44 @@
+# depslib dependency file v1.0
+1459035729 source:c:\users\black2\desktop\codeblocks projects\project10\project10main.cpp
+	"p10class.h"
+
+1459034561 c:\users\black2\desktop\codeblocks projects\project10\p10class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+
+1459035715 source:c:\users\black2\desktop\codeblocks projects\project10\p10class.cpp
+	"p10class.h"
+
+1459039329 source:c:\users\black2\desktop\codeblocks projects\project10 cube draw unfinished\project10main.cpp
+	"p10class.h"
+
+1459038161 c:\users\black2\desktop\codeblocks projects\project10 cube draw unfinished\p10class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+
+1459039329 source:c:\users\black2\desktop\codeblocks projects\project10 cube draw rotating\project10main.cpp
+	"p10class.h"
+
+1459038161 c:\users\black2\desktop\codeblocks projects\project10 cube draw rotating\p10class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+
+1459039329 source:d:\codes and programming\codeblocks projects opengl c++\project10 cube draw rotating\project10main.cpp
+	"p10class.h"
+
+1459038161 d:\codes and programming\codeblocks projects opengl c++\project10 cube draw rotating\p10class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+

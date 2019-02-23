@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1459528061 source:c:\users\black2\desktop\codeblocks projects\project17 a cube\project17main.cpp
+	"p17class.h"
+
+1459457909 c:\users\black2\desktop\codeblocks projects\project17 a cube\p17class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+
+1459531565 source:c:\users\black2\desktop\codeblocks projects\project17 a cube\p17class.cpp
+	"p17class.h"
+

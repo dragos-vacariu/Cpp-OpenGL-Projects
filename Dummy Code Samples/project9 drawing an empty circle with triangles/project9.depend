@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1459016658 source:c:\users\black2\desktop\codeblocks projects\project9\p9class.cpp
+	"p9class.h"
+
+1459016525 c:\users\black2\desktop\codeblocks projects\project9\p9class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+
+1459016694 source:c:\users\black2\desktop\codeblocks projects\project9\project9main.cpp
+	"p9class.h"
+
