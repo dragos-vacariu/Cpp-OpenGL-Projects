@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1460311537 source:c:\users\black2\desktop\codeblocks projects\project28\project28main.cpp
+	"p28class.h"
+
+1460314441 c:\users\black2\desktop\codeblocks projects\project28\p28class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+
+1460311537 source:c:\users\black2\desktop\codeblocks projects\project28 textures\project28main.cpp
+	"p28class.h"
+
+1460314441 c:\users\black2\desktop\codeblocks projects\project28 textures\p28class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+

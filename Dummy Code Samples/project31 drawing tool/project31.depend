@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1460677374 source:c:\users\black2\desktop\codeblocks projects\project31\project31main.cpp
+	"p31class.h"
+
+1460720809 c:\users\black2\desktop\codeblocks projects\project31\p31class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+	<stdlib.h>
+
+1460673196 source:c:\users\black2\desktop\codeblocks projects\project31\p31class.cpp
+	"p31class.h"
+
+1460677374 source:c:\users\black2\desktop\codeblocks projects\project31 drawing tool\project31main.cpp
+	"p31class.h"
+
+1460720809 c:\users\black2\desktop\codeblocks projects\project31 drawing tool\p31class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+	<stdlib.h>
+
+1460743013 source:c:\users\black2\desktop\codeblocks projects\project31 drawing tool\p31class.cpp
+	"p31class.h"
+

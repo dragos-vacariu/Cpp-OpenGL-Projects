@@ -1,0 +1,68 @@
+# depslib dependency file v1.0
+1460927739 source:c:\users\black2\desktop\codeblocks projects\project36\project36main.cpp
+	"p36class.h"
+
+1460928439 c:\users\black2\desktop\codeblocks projects\project36\p36class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+	<windows.h>
+
+1460927925 source:c:\users\black2\desktop\codeblocks projects\project36\p36class.cpp
+	"p36class.h"
+
+1460927739 source:c:\users\black2\desktop\codeblocks projects\project36 static library\project36main.cpp
+	"p36class.h"
+
+1461019893 c:\users\black2\desktop\codeblocks projects\project36 static library\p36class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+	<windows.h>
+	<SOIL.h>
+	<fstream>
+
+1461019920 source:c:\users\black2\desktop\codeblocks projects\project36 static library\p36class.cpp
+	"p36class.h"
+
+1215443608 source:c:\sdl libraries\i686-w64-mingw32\include\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1215443608 c:\sdl libraries\i686-w64-mingw32\include\soil.h
+
+1215443608 c:\sdl libraries\i686-w64-mingw32\include\stb_image_aug.h
+	<stdio.h>
+
+1215443608 c:\sdl libraries\i686-w64-mingw32\include\image_helper.h
+
+1215443608 c:\sdl libraries\i686-w64-mingw32\include\image_dxt.h
+
+1461091718 source:c:\users\black2\desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp
+	"p36class.h"
+
+1461019893 c:\users\black2\desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.h
+	<SDL.h>
+	<glew.h>
+	<iostream>
+	<conio.h>
+	<windows.h>
+	<SOIL.h>
+	<fstream>
+
+1460927739 source:c:\users\black2\desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\project36main.cpp
+	"p36class.h"
+

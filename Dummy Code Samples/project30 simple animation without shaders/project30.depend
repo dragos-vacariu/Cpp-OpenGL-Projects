@@ -1,0 +1,29 @@
+# depslib dependency file v1.0
+1460582214 source:c:\users\black2\desktop\codeblocks projects\project30\project30main.cpp
+	"p30class.h"
+
+1460306975 c:\users\black2\desktop\codeblocks projects\project30\p30class.h
+	<SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+	<stdlib.h>
+
+1460586143 source:c:\users\black2\desktop\codeblocks projects\project30\p30class.cpp
+	"p30class.h"
+
+1460582792 source:d:\codes and programming\codeblocks projects opengl c++\project30 simple animation without shaders\p30class.cpp
+	"p30class.h"
+
+1483014958 d:\codes and programming\codeblocks projects opengl c++\project30 simple animation without shaders\p30class.h
+	<SDL2/SDL.h>
+	<iostream>
+	<glew.h>
+	<conio.h>
+	<math.h>
+	<stdlib.h>
+
+1483015452 source:d:\codes and programming\codeblocks projects opengl c++\project30 simple animation without shaders\project30main.cpp
+	"p30class.h"
+

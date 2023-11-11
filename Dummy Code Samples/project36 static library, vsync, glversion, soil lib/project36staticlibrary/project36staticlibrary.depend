@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1460928329 source:c:\users\black2\desktop\codeblocks projects\project36\project36staticlibrary\main.c
+	<SDL.h>
+	<glew.h>
+

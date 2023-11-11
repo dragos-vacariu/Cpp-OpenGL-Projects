@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>project36 build log</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body>
+<tt>
+Build started on: <u>20-04-2016 at 21:34.44</u><br />
+Build ended on: <u>20-04-2016 at 21:34.46</u><p />
+<b>-------------- Build: Debug in project36 (compiler: GNU GCC Compiler)---------------</b><br />
+mingw32-g++.exe -Wall -g -std=c++11 -I"C:\sdl libraries\i686-w64-mingw32\include" -I"C:\sdl libraries\i686-w64-mingw32\glfw3\src" -c "C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp" -o obj\Debug\p36class.o<br />
+C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp: In member function 'SDL_Window* p16class::init()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:43:19: warning: variable 'context' set but not used [-Wunused-but-set-variable]</font><br />
+     SDL_GLContext context;<br />
+                   ^<br />
+C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp: In member function 'void p16class::draw(SDL_Window*)':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:73:13: warning: unused variable 'pos' [-Wunused-variable]</font><br />
+     GLfloat pos [] {10, 500, 0};<br />
+             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:74:13: warning: unused variable 'pos2' [-Wunused-variable]</font><br />
+     GLfloat pos2 [] {650, 100, -10};<br />
+             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:76:13: warning: unused variable 'ambient' [-Wunused-variable]</font><br />
+     GLfloat ambient [] {1.0,1.0,1.0,1.0};<br />
+             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:77:13: warning: unused variable 'ambient2' [-Wunused-variable]</font><br />
+     GLfloat ambient2 [] {0.0,1.0,0.0,1.0};<br />
+             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:79:13: warning: unused variable 'diffuse' [-Wunused-variable]</font><br />
+     GLfloat diffuse [] {0.0,0.0,1.0,1.0};<br />
+             ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:80:13: warning: unused variable 'diffuse2' [-Wunused-variable]</font><br />
+     GLfloat diffuse2 [] {1.0, 1.0, 0.0, 1.0};<br />
+             ^<br />
+C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp: In member function 'GLuint p16class::installshaders()':<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:214:36: warning: deprecated conversion from string constant to 'GLchar* {aka char*}' [-Wwrite-strings]</font><br />
+     GLchar* vertexShaderFilePath = "vertexshader.vsh";<br />
+                                    ^<br />
+<font color="#0000ff">C:\Users\Black2\Desktop\codeblocks projects\project36 static library, vsync, glversion, soil lib\p36class.cpp:215:38: warning: deprecated conversion from string constant to 'GLchar* {aka char*}' [-Wwrite-strings]</font><br />
+     GLchar* fragmentShaderFilePath = "fragmentshader.fsh";<br />
+                                      ^<br />
+mingw32-g++.exe -L"C:\sdl libraries\i686-w64-mingw32\lib" -o bin\Debug\project36.exe obj\Debug\p36class.o obj\Debug\project36main.o  -lmingw32 -lSDL2main -lSDL2 -lglu32 -lOpenGL32 -lSDL2_mixer -lSDL2_ttf -lSDL2_test -lglfw3  "C:\sdl libraries\i686-w64-mingw32\lib\glew32.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mx.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32mxs.lib" "C:\sdl libraries\i686-w64-mingw32\lib\glew32s.lib" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32.dll.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32mx.a" "C:\sdl libraries\i686-w64-mingw32\lib\libglew32mx.dll.a" "C:\sdl libraries\i686-w64-mingw32\lib\libSOIL.a"<br />
+obj\Debug\p36class.o: In function "ZN8p16class4drawEP10SDL_Window':<br />
+<font color="#ff0000">C:/Users/Black2/Desktop/codeblocks projects/project36 static library, vsync, glversion, soil lib/p36class.cpp:92: undefined reference to "returnten'</font><br />
+<font color="#ff0000">C:/Users/Black2/Desktop/codeblocks projects/project36 static library, vsync, glversion, soil lib/p36class.cpp:93: undefined reference to "strING'</font><br />
+<font color="#ff0000">C:\sdl libraries\i686-w64-mingw32\lib\libSOIL.a(SOIL.o):SOIL.c:(.text+0x1d1): undefined reference to "wglGetProcAddress@4'</font><br />
+<font color="#ff0000">C:\sdl libraries\i686-w64-mingw32\lib\libSOIL.a(SOIL.o):SOIL.c:(.text+0x84f): undefined reference to "glDeleteTextures@8'</font><br />
+<font color="#ff0000">C:\sdl libraries\i686-w64-mingw32\lib\libSOIL.a(SOIL.o):SOIL.c:(.text+0xdf8): undefined reference to "glReadPixels@28'</font><br />
+<font color="#ff0000">C:\sdl libraries\i686-w64-mingw32\lib\libSOIL.a(SOIL.o):SOIL.c:(.text+0x100d): undefined reference to "glGetIntegerv@8'</font><br />
+C:/Program Files/codeblocks/MinGW/bin/../lib/gcc/mingw32/4.9.2/../../../../mingw32/bin/ld.exe: C:\sdl libraries\i686-w64-mingw32\lib\libSOIL.a(SOIL.o): bad reloc address 0x0 in section ".data'<br />
+C:/Program Files/codeblocks/MinGW/bin/../lib/gcc/mingw32/4.9.2/../../../../mingw32/bin/ld.exe: final link failed: Invalid operation<br />
+<font color="#ff0000">collect2.exe: error: ld returned 1 exit status</font><br />
+<font color="#a00000">Process terminated with status 1 (0 minute(s), 2 second(s))</font><br />
+<font color="#a00000">7 error(s), 9 warning(s) (0 minute(s), 2 second(s))</font><br />
+</tt>
+</body>
+</html>
