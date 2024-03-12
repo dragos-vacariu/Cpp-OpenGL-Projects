@@ -2,7 +2,7 @@
 	margin:5px;
 }
 body{
-	background-image: url(homepage_background.jpg);
+	background-image: url(index_background.jpg);
 	background-size:20%;
     background-repeat: repeat;
 }
@@ -21,9 +21,13 @@ body{
 #pagination_div h2{
 	font-family: Consolas;
 	color: white;
-    font-size: 1.5vw;
+    font-size: 2.0vw;
 	font-variant: small-caps;
 }
+#pagination_div h2 b{
+	color: pink;
+}
+
 #pagination_div h4{
 	font-family: Verdana;
 	color: gold;
