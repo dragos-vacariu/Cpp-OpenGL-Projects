@@ -1,2 +1,2 @@
 Presentation Webpage: 
-https://dragos-vacariu.github.io/Cpp-OpenGL-Projects/
+https://dragos-vacariu.github.io/catalogue/Cpp-OpenGL-Projects.html
