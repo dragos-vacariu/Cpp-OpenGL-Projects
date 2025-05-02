@@ -1,0 +1,343 @@
+# depslib dependency file v1.0
+1461504654 source:c:\users\black2\desktop\codeblocks projects\project41\project41main.cpp
+	"p41class.h"
+
+1461505040 c:\users\black2\desktop\codeblocks projects\project41\p41class.h
+	<SDL.h>
+	<glew.h>
+	<conio.h>
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<SOIL.h>
+	<SDL_mixer.h>
+	<math.h>
+	<SDL_ttf.h>
+
+1215443608 source:c:\users\black2\desktop\codeblocks projects\project41\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1461504430 source:c:\users\black2\desktop\codeblocks projects\project41\p41class.cpp
+	"p41class.h"
+
+1461504576 source:c:\users\black2\desktop\codeblocks projects\project41\printmessage.cpp
+	"printmessage.h"
+
+1461504445 c:\users\black2\desktop\codeblocks projects\project41\printmessage.h
+	<SDL.h>
+	<SDL_ttf.h>
+	<iostream>
+
+1461504576 source:c:\users\black2\desktop\codeblocks projects\project41 relief road\printmessage.cpp
+	"printmessage.h"
+
+1461504445 c:\users\black2\desktop\codeblocks projects\project41 relief road\printmessage.h
+	<SDL.h>
+	<SDL_ttf.h>
+	<iostream>
+
+1461624808 source:c:\users\black2\desktop\codeblocks projects\project41 relief road\project41main.cpp
+	"p41class.h"
+
+1461689327 c:\users\black2\desktop\codeblocks projects\project41 relief road\p41class.h
+	<SDL.h>
+	<glew.h>
+	<conio.h>
+	<iostream>
+	<stdlib.h>
+	<stdio.h>
+	<SOIL.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+
+1215443608 source:c:\users\black2\desktop\codeblocks projects\project41 relief road\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1461624321 source:c:\users\black2\desktop\codeblocks projects\project41 relief road\p41class.cpp
+	"p41class.h"
+
+1745860341 source:c:\users\black\desktop\project41 relief road\project41main.cpp
+	"p41class.h"
+
+1745860998 c:\users\black\desktop\project41 relief road\p41class.h
+	<SDL.h>
+	<glew.h>
+	<stdlib.h>
+	<stdio.h>
+	<SOIL.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<array>
+	<string>
+	<conio.h>
+	<iostream>
+
+1215447208 source:c:\users\black\desktop\project41 relief road\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1745860157 source:c:\users\black\desktop\project41 relief road\p41class.cpp
+	"p41class.h"
+
+1745959397 source:c:\users\black\desktop\project41 relief road\main.cpp
+	"car_game.h"
+
+1745957299 c:\users\black\desktop\project41 relief road\car_game.h
+	<SDL.h>
+	<glew.h>
+	<stdlib.h>
+	<stdio.h>
+	<SOIL.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<array>
+	<string>
+	<conio.h>
+	<iostream>
+
+1745960160 source:c:\users\black\desktop\project41 relief road\car_game.cpp
+	"car_game.h"
+
+1215447208 source:c:\users\black\desktop\project41 relief road\dependencies\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1746055650 source:c:\users\black\desktop\project41 relief road\src\car_game.cpp
+	"../include/car_game.h"
+
+1746048686 c:\users\black\desktop\project41 relief road\include\car_game.h
+	<sstream>
+	<memory>
+	"../include/game_hud.h"
+	"../include/road.h"
+	"../include/cross_functions.h"
+
+1746039937 source:c:\users\black\desktop\project41 relief road\src\hud_text.cpp
+	"../include/hud_text.h"
+
+1746041787 c:\users\black\desktop\project41 relief road\include\hud_text.h
+	<SDL.h>
+	<glew.h>
+	<stdlib.h>
+	<stdio.h>
+	<SOIL.h>
+	<SDL_mixer.h>
+	<array>
+	<string>
+	<sstream>
+	<conio.h>
+	<iostream>
+	<SDL_ttf.h>
+
+1745963751 source:c:\users\black\desktop\project41 relief road\src\main.cpp
+	"../include/car_game.h"
+
+1746048311 c:\users\black\desktop\project41 relief road\include\hud_text_element.h
+	"../include/cross_functions.h"
+
+1746044917 source:c:\users\black\desktop\project41 relief road\src\hud_text_element.cpp
+	"../include/hud_text_element.h"
+
+1746043191 c:\users\black\desktop\project41 relief road\include\game_hud.h
+	"../include/hud_text_element.h"
+
+1746044925 source:c:\users\black\desktop\project41 relief road\src\game_hud.cpp
+	"../include/game_hud.h"
+
+1746055102 c:\users\black\desktop\project41 relief road\include\road.h
+	<glew.h>
+	"../include/cross_functions.h"
+
+1746048272 c:\users\black\desktop\project41 relief road\include\cross_functions.h
+	<SDL.h>
+	<glew.h>
+	<stdlib.h>
+	<stdio.h>
+	<SOIL.h>
+	<SDL_mixer.h>
+	<array>
+	<string>
+	<sstream>
+	<conio.h>
+	<iostream>
+	<SDL_ttf.h>
+
+1746048376 source:c:\users\black\desktop\project41 relief road\src\cross_functions.cpp
+	"../include/cross_functions.h"
+
+1746053729 source:c:\users\black\desktop\project41 relief road\src\road.cpp
+	"road.h"
+
+1215447208 source:c:\users\black\desktop\car game project\dependencies\soil.c
+	<windows.h>
+	<wingdi.h>
+	<GL/gl.h>
+	<OpenGL/gl.h>
+	<Carbon/Carbon.h>
+	<GL/gl.h>
+	<GL/glx.h>
+	"SOIL.h"
+	"stb_image_aug.h"
+	"image_helper.h"
+	"image_DXT.h"
+	<stdlib.h>
+	<string.h>
+
+1746203486 source:c:\users\black\desktop\car game project\src\cross_functions.cpp
+	"../include/cross_functions.h"
+
+1746216947 c:\users\black\desktop\car game project\include\cross_functions.h
+	<SDL.h>
+	<glew.h>
+	<stdlib.h>
+	<stdio.h>
+	<SOIL.h>
+	<SDL_mixer.h>
+	<array>
+	<string>
+	<sstream>
+	<conio.h>
+	<iostream>
+	<vector>
+	<algorithm>
+	<iomanip>
+	<iostream>
+	<cfloat>
+	<cmath>
+	<fstream>
+	<memory>
+	<SDL_ttf.h>
+
+1746102903 source:c:\users\black\desktop\car game project\src\game_hud.cpp
+	"../include/game_hud.h"
+
+1746102036 c:\users\black\desktop\car game project\include\game_hud.h
+	"../include/hud_text_element.h"
+
+1746098606 c:\users\black\desktop\car game project\include\hud_text_element.h
+	"../include/cross_functions.h"
+
+1746100502 source:c:\users\black\desktop\car game project\src\hud_text_element.cpp
+	"../include/hud_text_element.h"
+
+1746205337 source:c:\users\black\desktop\car game project\src\main.cpp
+	"../include/game.h"
+
+1746101575 c:\users\black\desktop\car game project\include\car_game.h
+	<sstream>
+	<memory>
+	"../include/game_hud.h"
+	"../include/world_map.h"
+	"../include/cross_functions.h"
+
+1746093169 c:\users\black\desktop\car game project\include\road.h
+	<glew.h>
+	"../include/cross_functions.h"
+
+1746102856 source:c:\users\black\desktop\car game project\src\car_game.cpp
+	"../include/car_game.h"
+
+1746208544 c:\users\black\desktop\car game project\include\world_map.h
+	<glew.h>
+	"../include/cross_functions.h"
+
+1746140945 source:c:\users\black\desktop\car game project\src\world_map.cpp
+	"world_map.h"
+
+1746209086 source:c:\users\black\desktop\car game project\src\hud.cpp
+	"../include/hud.h"
+
+1746203652 c:\users\black\desktop\car game project\include\hud.h
+	"../include/text_label.h"
+
+1746114954 c:\users\black\desktop\car game project\include\text_label.h
+	"../include/cross_functions.h"
+
+1746216982 c:\users\black\desktop\car game project\include\game.h
+	"../include/hud.h"
+	"../include/world_map.h"
+	"../include/curvy_world.h"
+	"../include/cross_functions.h"
+	"../include/player.h"
+	"../include/traffic_spawner.h"
+
+1746189624 c:\users\black\desktop\car game project\include\player.h
+	"../include/car.h"
+	"../include/cross_functions.h"
+
+1746207491 c:\users\black\desktop\car game project\include\car.h
+	"../include/cross_functions.h"
+	"../include/world_map.h"
+
+1746194903 source:c:\users\black\desktop\car game project\src\text_label.cpp
+	"../include/text_label.h"
+
+1746207482 source:c:\users\black\desktop\car game project\src\car.cpp
+	"car.h"
+
+1746216334 source:c:\users\black\desktop\car game project\src\game.cpp
+	"../include/game.h"
+
+1746206281 source:c:\users\black\desktop\car game project\src\player.cpp
+	"../include/player.h"
+
+1746213091 source:c:\users\black\desktop\car game project\src\traffic_spawner.cpp
+	"../include/traffic_spawner.h"
+
+1746209825 c:\users\black\desktop\car game project\include\traffic_spawner.h
+	"../include/cross_functions.h"
+	"../include/car.h"
+	"../include/world_map.h"
+
+1746216918 source:c:\users\black\desktop\car game project\src\curvy_world.cpp
+
+1746216969 c:\users\black\desktop\car game project\include\curvy_world.h
+	"../include/cross_functions.h"
+	<SFML/Graphics.hpp>
+
