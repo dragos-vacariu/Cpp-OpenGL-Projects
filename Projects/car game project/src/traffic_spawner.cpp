@@ -32,27 +32,33 @@ void traffic_spawner::generate_traffic_car()
 {
     /*This function will generate a traffic car*/
 
-    //get another position, in the same way, random on x
-    GLfloat x_pos = WORLD_SEGMENTS_WIDTH + (CAR_WIDTH);
+    float car_y = WINDOW_HEIGHT * 1.5f;
 
-    int road_line = (rand() % 3);
+    float right_road_margin;
+    float left_road_margin;
 
-    if(road_line == 1)
+    bool margins_found = curvy_world::getRoadMargins(car_y, left_road_margin, right_road_margin);
+
+    if(margins_found)
     {
-        x_pos = WORLD_SEGMENTS_WIDTH + (ROAD_SEGMENTS_WIDTH/3) + (CAR_WIDTH);
-    }
-    else if(road_line == 2)
-    {
-        x_pos = WORLD_SEGMENTS_WIDTH + ( 2 * (ROAD_SEGMENTS_WIDTH/3)) + (CAR_WIDTH);
-    }
-    else if(road_line == 0 )
-    {
-        /*Nothing to do. We'll use the line 0 with the predefined x_pos*/
-    }
+        GLfloat road_width = right_road_margin - left_road_margin;
+        GLfloat road_lane_size = road_width / 3; // Assuming 3 lanes
 
-    int texture_index = (rand() % this->car_textures.size());
+        // Choose a random lane index (0, 1, or 2)
+        int road_line = (rand() % 3);
 
-    this->traffic_cars.push_back(new car(this->car_textures[texture_index].c_str(), x_pos, WINDOW_HEIGHT * 1.5f, 7.0f, Texture_Flip::NORMAL));
+        // Calculate the X position of the CENTER of the chosen lane
+        GLfloat center_of_chosen_lane_x = left_road_margin + (road_line + 0.5f) * road_lane_size;
+
+        // The car's X position should be its center X position
+        GLfloat x_pos = center_of_chosen_lane_x;
+
+        int texture_index = (rand() % this->car_textures.size());
+
+        // Assuming the car constructor takes the center X position
+        this->traffic_cars.push_back(new car(this->car_textures[texture_index].c_str(), x_pos,
+                                             car_y, 7.0f, Texture_Flip::NORMAL));
+    }
 }
 
 void traffic_spawner::change_traffic_speed(GLfloat speed)
@@ -65,7 +71,7 @@ void traffic_spawner::change_traffic_speed(GLfloat speed)
     }
 }
 
-void traffic_spawner::draw_traffic_cars(float player_speed)
+void traffic_spawner::draw_traffic_cars(float speed)
 {
     /*This function will draw the traffic cars onto the screen,
     and when they get out of range the cars will be cleared and new ones will be generated*/
@@ -77,7 +83,16 @@ void traffic_spawner::draw_traffic_cars(float player_speed)
     {
         car* traffic_car = *traffic_iterator; //get the data from iterator into a local pointer variable
 
-        traffic_car->move_downwards(player_speed);
+        traffic_car->move_downwards(speed);
+
+        bool offRoad = curvy_world::isObjectOffRoad(traffic_car->y_pos,
+                                            traffic_car->left_top_corner[0],
+                                            traffic_car->right_top_corner[0]);
+        if(offRoad == true)
+        {
+            traffic_car->severe_decceleration();
+        }
+
         traffic_car->draw_car();
 
         //If the traffic cars gets out of the screen

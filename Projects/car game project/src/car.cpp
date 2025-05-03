@@ -6,12 +6,13 @@ car::car(const char* texture_location, float x_position, float y_position, GLflo
          Texture_Flip texture_flipping)
 {
     this->texture = load_texture(texture_location);
-
+    this->car_speed = DEFAULT_CAR_SPEED;
     this->previous_x_pos = x_position;
     this->previous_y_pos = y_position;
     this->collider = nullptr;
     this->car_rotation = 0.0f;
-
+    this->braking_factor = this->car_speed * BRAKING_FORCE;
+    this->acceleration_factor = ACCELETATION_FORCE / this->car_speed;
     this->update_car_position(x_position, y_position);
     this->draw_car();
     this->texture_flip = texture_flipping;
@@ -79,6 +80,52 @@ void car::init_quad_corners_relative_to_window()
 }
 
 
+void car::brake()
+{
+    /*This function will brake the player's car*/
+
+    if(this->car_speed - this->braking_factor > MINIMUM_TRAVELLING_SPEED)
+    {
+        this->car_speed -= this->braking_factor;
+        this->braking_factor = this->car_speed * BRAKING_FORCE;
+        this->changeSpeed(this->car_speed);
+    }
+}
+
+void car::accelerate()
+{
+    /*This function will accelerate the player's speed*/
+
+    if(this->car_speed + this->acceleration_factor < MAXIMUM_TRAVELLING_SPEED)
+    {
+        this->car_speed += this->acceleration_factor;
+        this->acceleration_factor = ACCELETATION_FORCE / this->car_speed;
+        this->changeSpeed(this->car_speed);
+    }
+}
+
+void car::slight_decceleration()
+{
+    /*This function will severely decelerate the player's speed*/
+
+    if(this->car_speed - DECELERATION_FORCE > MINIMUM_TRAVELLING_SPEED)
+    {
+        this->car_speed -= DECELERATION_FORCE;
+        this->changeSpeed(this->car_speed);
+    }
+}
+
+void car::severe_decceleration()
+{
+    /*This function will decelerate the player's speed*/
+
+    if(this->car_speed - DECELERATION_FORCE > MINIMUM_TRAVELLING_SPEED)
+    {
+        this->car_speed -= (DECELERATION_FORCE*3);
+        this->changeSpeed(this->car_speed);
+    }
+}
+
 CollisionInfo car::collidesWith(car* other)
 {
     /*This function will check whether this car collides with another*/
@@ -142,8 +189,8 @@ void car::deflect_collision(float x_pos_factor, float y_pos_factor)
         according to the 2 parameters passed as arguments.
     */
 
-    if(this->x_pos + x_pos_factor - CAR_WIDTH/2 > world_map::getRoadLeftMargin() &&
-       this->x_pos + x_pos_factor + CAR_WIDTH/2 < world_map::getRoadRightMargin())
+    if(this->x_pos + x_pos_factor - CAR_WIDTH/2 > 50 &&
+       this->x_pos + x_pos_factor + CAR_WIDTH/2 < WINDOW_WIDTH-50)
     {
         this->x_pos += x_pos_factor;
     }
@@ -231,13 +278,30 @@ void car::restore_previous_position()
     this->update_car_position(this->x_pos, this->y_pos );
 }
 
-void car::move_downwards(float player_speed)
+void car::move_downwards(float speed)
 {
-    /*This function will move the car downwards - used for the traffic_cars*/
+    //This function will move the car downwards - used for the traffic_cars
 
+    float road_margin_left;
+    float road_margin_right;
+    float y_pos = this->y_pos + this->car_speed - speed;
+
+    bool margins_found = curvy_world::getRoadMargins(y_pos, road_margin_left, road_margin_right);
+    if(margins_found)
+    {
+        float distance_from_margin_left = this->x_pos - road_margin_left;
+
+        this->y_pos = y_pos;
+        this->x_pos = road_margin_left + distance_from_margin_left;
+        this->update_car_position(this->x_pos, this->y_pos);
+    }
+
+
+    /*
     this->previous_y_pos = this->y_pos;
-    this->y_pos += this->car_speed - player_speed;
+
     this->update_car_position(this->x_pos, this->y_pos);
+    */
     this->draw_car();
 }
 

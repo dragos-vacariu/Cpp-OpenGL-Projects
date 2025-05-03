@@ -39,6 +39,7 @@
 		</Unit>
 		<Unit filename="include/car.h" />
 		<Unit filename="include/cross_functions.h" />
+		<Unit filename="include/curvy_world.h" />
 		<Unit filename="include/game.h" />
 		<Unit filename="include/hud.h" />
 		<Unit filename="include/player.h" />
@@ -47,6 +48,7 @@
 		<Unit filename="include/world_map.h" />
 		<Unit filename="src/car.cpp" />
 		<Unit filename="src/cross_functions.cpp" />
+		<Unit filename="src/curvy_world.cpp" />
 		<Unit filename="src/game.cpp" />
 		<Unit filename="src/hud.cpp" />
 		<Unit filename="src/main.cpp" />

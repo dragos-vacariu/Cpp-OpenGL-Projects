@@ -19,8 +19,8 @@ game::game()
 
     //Unique pointers - these pointers don't need to be deleted to free the memory:
     this->game_hud = unique_ptr<hud>(new hud(this->window));
-    this->game_world = unique_ptr<world_map>(new world_map());
-    //this->curvy_world_map = unique_ptr<curvy_world>(new curvy_world());
+    //this->game_world = unique_ptr<world_map>(new world_map());
+    this->curvy_world_map = unique_ptr<curvy_world>(new curvy_world());
     this->game_player = unique_ptr<player>(new player());
     this->game_traffic_spawner = unique_ptr<traffic_spawner>(new traffic_spawner());
 }
@@ -35,6 +35,7 @@ game::~game()
 //Global Variables
 
 bool INPUT_ACCELERATE = false;
+bool DECCELERATION_ENABLED = false;
 bool INPUT_BRAKE = false;
 bool INPUT_LEFT = false;
 bool INPUT_RIGHT = false;
@@ -47,7 +48,18 @@ void game::mainloop() //function that draw on the window.
     glViewport(0,0,WINDOW_WIDTH,WINDOW_HEIGHT);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(0,WINDOW_HEIGHT,0,WINDOW_WIDTH,-100,100);
+
+    //glOrtho(0,WINDOW_HEIGHT,0,WINDOW_WIDTH,-100,100); //this is WRONG as the 2 dimensions HEIGHT and WIDTH are reversed
+    //With the commented line the drawing will not fill the window on the Y axis, portion of the screen height
+    //will be empty black.
+
+    /*
+    With glOrtho() I'm telling OpenGL that:
+    -My horizontal world goes from X=0 to X=WINDOW_WIDTH;
+    -My vertical world goes from X=0 to X=WINDOW_WIDTH;
+    -My depth (Z-axis) go from -100px to 100px.
+    */
+    glOrtho(0, WINDOW_WIDTH, 0, WINDOW_HEIGHT, -100, 100);
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
     //translating done.
@@ -67,15 +79,15 @@ void game::mainloop() //function that draw on the window.
             glClear(GL_COLOR_BUFFER_BIT); //clear the screen each time;
 
             //Drawing the road
-            this->game_world->drawWorld(this->game_player->player_speed);
-            //this->curvy_world_map->drawRoad();
+            //this->game_world->drawWorld(this->game_player->car_obj->car_speed);
+            this->curvy_world_map->drawWorld(this->game_player->car_obj->car_speed);
 
             this->game_player->drawPlayer();
-            this->game_traffic_spawner->draw_traffic_cars(this->game_player->player_speed);
+            this->game_traffic_spawner->draw_traffic_cars(this->game_player->car_obj->car_speed);
 
             this->game_hud->updateScore(Score);
             this->game_hud->updateHighestScore();
-            this->game_hud->updateSpeedLabel(int(this->game_player->player_speed * 10));
+            this->game_hud->updateSpeedLabel(int(this->game_player->car_obj->car_speed * 10));
             this->game_hud->updateDamageLabel(Damage);
 
             if(Damage >= 100)
@@ -101,7 +113,7 @@ void game::handle_user_input()
     */
 
     this->read_user_input();
-    if(INPUT_ACCELERATE)
+    if(INPUT_ACCELERATE && DECCELERATION_ENABLED == false)
     {
         this->game_player->accelerate();
     }
@@ -109,29 +121,74 @@ void game::handle_user_input()
     {
         if(this->game_status == GAME_STATUS::GAME_RUNNING)
         {
-            this->game_player->deccelerate();
+            this->game_player->car_obj->severe_decceleration();
+        }
+    }
+    if(DECCELERATION_ENABLED)
+    {
+        if(this->game_status == GAME_STATUS::GAME_RUNNING)
+        {
+            this->game_player->car_obj->severe_decceleration();
         }
     }
     if(INPUT_BRAKE)
     {
-        this->game_player->brake();
+        this->game_player->car_obj->brake();
     }
-    if(INPUT_LEFT)
+    if (INPUT_LEFT)
     {
-        if( (this->game_player->getTopLeftXCoor() - CAR_TURNING_FACTOR > this->game_world->getRoadLeftMargin()) &&
+        //THIS WILL KEEP THE CARS ON THE SCREEN
+        if(this->game_player->getTopLeftXCoor() > 50)
+        {
+            this->game_player->car_obj->turn(CAR_DIRECTION::LEFT);
+
+            bool offRoad = curvy_world::isObjectOffRoad(this->game_player->car_obj->y_pos,
+                                            this->game_player->car_obj->left_top_corner[0],
+                                            this->game_player->car_obj->right_top_corner[0]);
+            if(offRoad == true)
+            {
+                DECCELERATION_ENABLED = true;
+            }
+            else
+            {
+                DECCELERATION_ENABLED = false;
+            }
+        }
+
+        /*
+        if( (this->game_player->getTopLeftXCoor() - CAR_TURNING_FACTOR > world_map::getRoadLeftMargin()) &&
            (this->game_status == GAME_STATUS::GAME_RUNNING) )
         {
             this->game_player->car_obj->turn(CAR_DIRECTION::LEFT);
-        }
+        }*/
     }
     if(INPUT_RIGHT)
     {
-        if( (this->game_player->getTopRightXCoor() + CAR_TURNING_FACTOR < this->game_world->getRoadRightMargin()) &&
-            (this->game_status == GAME_STATUS::GAME_RUNNING) )
+        //THIS WILL KEEP THE CARS ON THE SCREEN
+        if(this->game_player->getTopRightXCoor() < WINDOW_WIDTH-50)
         {
             this->game_player->car_obj->turn(CAR_DIRECTION::RIGHT);
+
+            bool offRoad = curvy_world::isObjectOffRoad(this->game_player->car_obj->y_pos,
+                                this->game_player->car_obj->left_top_corner[0],
+                                this->game_player->car_obj->right_top_corner[0]);
+            if(offRoad == true)
+            {
+                DECCELERATION_ENABLED = true;
+            }
+            else
+            {
+                DECCELERATION_ENABLED = false;
+            }
         }
+
+        /*if( (this->game_player->getTopRightXCoor() + CAR_TURNING_FACTOR < world_map::getRoadRightMargin()) &&
+            (this->game_status == GAME_STATUS::GAME_RUNNING) )
+        {
+
+        }*/
     }
+
     if(INPUT_LEFT == false && INPUT_RIGHT == false)
     {
         this->game_player->car_obj->decrease_turn();
@@ -227,8 +284,8 @@ void game::read_user_input()
                     {
                         //Cleaning up the pointers
                         this->game_hud.reset();
-                        this->game_world.reset();
-                        //this->curvy_world_map.reset();
+                        //this->game_world.reset();
+                        this->curvy_world_map.reset();
                         this->game_player.reset();
                         this->game_traffic_spawner.reset();
                         Score = 0;
@@ -236,8 +293,8 @@ void game::read_user_input()
 
                         //Creating new references
                         this->game_hud = unique_ptr<hud>(new hud(this->window));
-                        this->game_world = unique_ptr<world_map>(new world_map());
-                        //this->curvy_world_map = unique_ptr<curvy_world>(new curvy_world());
+                        //this->game_world = unique_ptr<world_map>(new world_map());
+                        this->curvy_world_map = unique_ptr<curvy_world>(new curvy_world());
                         this->game_player = unique_ptr<player>(new player());
                         this->game_traffic_spawner = unique_ptr<traffic_spawner>(new traffic_spawner());
 
@@ -350,7 +407,7 @@ void game::handleCarCollisions()
             this->game_player->car_obj->deflect_collision(collision_info.pushX/2, collision_info.pushY/2);
             //traffic_car->restore_previous_position();
             traffic_car->deflect_collision(-collision_info.pushX/2, -collision_info.pushY/2);
-            this->game_player->brake();
+            this->game_player->car_obj->brake();
 
 
             if(previous_collider != this->game_player->car_obj->collider)
@@ -381,17 +438,17 @@ void game:: calculateDamage(float x_axis_force, float y_axis_force)
     //frontal collision
     if(y_axis_force > 0)
     {
-        Damage += abs(this->game_player->player_speed) / 4;
+        Damage += abs(this->game_player->car_obj->car_speed) / 4;
     }
     //backside_collision
     else if(y_axis_force < 0)
     {
-        Damage += abs(this->game_player->player_speed) / 20;
+        Damage += abs(this->game_player->car_obj->car_speed) / 20;
     }
     //Horizontal collision
     if(abs(x_axis_force) > 0)
     {
-        Damage += abs(this->game_player->player_speed) / 10;
+        Damage += abs(this->game_player->car_obj->car_speed) / 10;
     }
 }
 

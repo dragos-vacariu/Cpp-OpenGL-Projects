@@ -4,6 +4,7 @@
 //Cross-functions inclusion:
 #include "../include/cross_functions.h"
 #include "../include/world_map.h"
+#include "../include/curvy_world.h"
 
 //Constant defines
 #define CAR_WIDTH 40
@@ -15,6 +16,14 @@
 #define COLORED_ITERATIONS_ON_COLOR_EFFECT 15
 #define IDLE_ITERATIONS_ON_COLOR_EFFECT 20
 #define OPACITY_FOR_COLOR_EFFECT 0.4f
+
+#define MINIMUM_TRAVELLING_SPEED 2.0f // it's important to be higher than 1, as we use this to also draw the world
+#define MAXIMUM_TRAVELLING_SPEED 20.0f
+#define BRAKING_FORCE 0.02f
+#define DECELERATION_FORCE 0.005f
+#define ACCELETATION_FORCE 2.0f
+#define MINIMUM_BRAKING_VALUE 0.1f
+#define MINIMUM_ACCELERATION_VALUE 0.1f
 
 enum Texture_Flip
 {
@@ -62,12 +71,16 @@ class car
         void turn(CAR_DIRECTION direction);
         void decrease_turn();
         void restore_previous_position();
-        void move_downwards(float player_speed);
+        void move_downwards(float speed);
         void move_upwards(float factor = 1);
         void changeSpeed(GLfloat speed);
         void deflect_collision(float x_pos_factor, float y_pos_factor);
         CollisionInfo collidesWith(car* other);
         void toggleColorEffect();
+        void brake();
+        void accelerate();
+        void slight_decceleration();
+        void severe_decceleration();
 
         //Public variables:
         GLfloat right_top_corner[2];
@@ -80,6 +93,8 @@ class car
         GLfloat previous_y_pos;
         GLfloat car_speed;
         GLfloat car_rotation;
+        GLfloat braking_factor;
+        GLfloat acceleration_factor;
         car* collider;
 
     protected:

@@ -1,71 +1,107 @@
-/*#ifndef CURVY_WORLD_H
+#ifndef CURVY_WORLD_H
 #define CURVY_WORLD_H
 
 #include "../include/cross_functions.h"
 
-#include <SFML/Graphics.hpp>
-using namespace sf;
+//Constant defines
+#define NUM_CURVY_WORLD_SEGMENTS 10
 
-struct Point
+// Place these at the very top of your file, outside any class or function
+#define CURVY_WORLD_SEGMENTS_HEIGHT 600 // Height of the quad
+#define CURVY_WORLD_SEGMENTS_WIDTH 800 // Height of the quad
+#define CURVY_ROAD_WIDTH 400
+#define CURVY_FIELD_WIDTH 200
+#define CURVY_ROAD_BASE_CENTER_X_POS CURVY_FIELD_WIDTH + (CURVY_ROAD_WIDTH / 2)
+
+//the higher the SCANLINE_PIXEL_HEIGHT, the "worse" (meaning less detailed and more blocky) the graphics will appear.
+#define SCANLINE_PIXEL_HEIGHT 1 // RECOMMENDED 1px per scanline
+
+using namespace std;
+
+struct WorldSegment
 {
-    float x, y;
-    Point() : x(0), y(0) {}
-    Point(float _x, float _y) : x(_x), y(_y) {}
+    int height;                  // number of scan lines
+    int baseXOffset;              //this as the starting X position for a whole segment’s movement
+    int y_pos;              //this as the starting X position for a whole segment’s movement
+    std::vector<float> delta_x_pos;          // precomputed per line curve
 
-    Point operator+(const Point& other) const
+    //Constructors
+    WorldSegment()
     {
-        return Point(x + other.x, y + other.y);
+        //Default Constructor is MANDATORY
     }
-    Point operator-(const Point& other) const
+    WorldSegment(int segment_height, int pos_y, float amplitude, float frequency, float phase)
+      : height(segment_height),           // initialize the height of the world segment
+        baseXOffset(0),                 // initialize baseXOffset which is the starting position on the X-Axis.
+        y_pos(pos_y),                 // initialize baseYOffset which is the starting position on the Y-Axis.
+        delta_x_pos(segment_height)       // initialize delta_x_pos to have segment_height elements as
+        //we will have 1 scan line for each pixel within the height
     {
-        return Point(x - other.x, y - other.y);
-    }
-    Point operator*(float scalar) const
-    {
-        return Point(x * scalar, y * scalar);
-    }
-    float length() const
-    {
-        return std::sqrt(x * x + y * y);
-    }
-    Point normalized() const
-    {
-        float len = length();
-        if (len == 0) return Point(0,0);
-        return Point(x / len, y / len);
-    }
-    Point perpendicular() const
-    {
-        return Point(-y, x); // perpendicular vector
+        /*
+
+        amplitude = how big the shift can get
+        frequency = how many curves fit in your visible height
+        phase = how far down the “rope” (wave) you’ve already traveled
+
+        higher amplitude -> wider, more dramatic turns; lower amplitude -> gentle bends.
+
+        high frequency -> many small ripples (tight, quick curves); low frequency -> long, sweeping bends.
+
+        phase -> shifts the entire wave left or right along the Y axis—i.e. it picks which part of the repeating
+        sine pattern you’re currently showing at the top of the screen.
+
+        */
+
+        for (int index = 0; index < segment_height; index++)
+        {
+            // Calculate the vertical position within the *total pixel height* of the segment
+            // This is what determines the position on the sine wave.
+            float vertical_pixel_position = static_cast<float>(index) * SCANLINE_PIXEL_HEIGHT;
+
+            /*Because the sine function returns values in the range -1 : +1 multiplying by amplitude gives you a
+            range of offsets in -amplitude + amplitude.*/
+
+            // Use the vertical_pixel_position in the sine function
+            this->delta_x_pos[index] = amplitude * sin(frequency * vertical_pixel_position + phase);
+
+            /*
+            This is the shape of your curve within one segment. It tells you, at logical scan line index
+            (from 0 to segment_logical_height-1), how far to wiggle left (negative) or right (positive)
+            relative to that segment’s baseOffset.
+            */
+        }
     }
 };
 
 class curvy_world
 {
     public:
-        // Control points for Bezier curve
-        Point controlPoint1;
-        Point controlPoint2;
-        Point controlPoint3;
-        Point controlPoint4;
-
         // Constructor
         curvy_world();
+
+        //Destructor
         virtual ~curvy_world();
 
-        // Generate control points for the road
-        void generateRoad(float startX, float startY, float width, float height);
+        // Public functions:
+        void drawWorld(float car_speed);
+        void drawWorld_OLD(float car_speed);
+        static bool isObjectOffRoad(float coord_y, float left_margin_x, float right_margin_x);
+        static bool getRoadMargins(float coord_y, float& left_margin_x, float& right_margin_x);
 
-        // Generate points along the Bezier curve
-        std::vector<Point> sampleBezierCurve(int sampleCount);
-
-        // Draw the road
-        void drawRoad(sf::RenderWindow& window, const sf::Texture& texture)
 
     private:
-        // Helper functions
-        Point bezierPoint(float t);
+        //Private variables
+        GLuint road_texture;
+        GLuint world_texture;
+        static WorldSegment world_segments[NUM_CURVY_WORLD_SEGMENTS];
+        GLfloat road_left_margin;
+        GLfloat road_right_margin;
+
+        //Private functions:
+        void update_phase(float car_speed, float frequency);
+        void draw_world_scanline(int scanline_index, int segment_index);
+        WorldSegment gen_curve_left(int y_position);
 };
 
 #endif // CURVY_WORLD_H
-*/
+

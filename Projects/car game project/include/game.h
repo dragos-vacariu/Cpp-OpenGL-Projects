@@ -53,8 +53,8 @@ class game
 
         //These are unique_ptr's - pointers that have automatic memory management, no delete required for cleanup
         unique_ptr <hud> game_hud;
-        unique_ptr <world_map> game_world;
-        //unique_ptr <curvy_world> curvy_world_map;;
+        //unique_ptr <world_map> game_world;
+        unique_ptr <curvy_world> curvy_world_map;;
         unique_ptr <player> game_player;
         unique_ptr <traffic_spawner> game_traffic_spawner;
 };
