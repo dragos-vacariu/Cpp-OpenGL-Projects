@@ -2,7 +2,7 @@
 
 using namespace std;
 
-car::car(const char* texture_location, float x_position, float y_position, GLfloat speed,
+car::car(const char* texture_location, float x_position, float y_position, int road_lane_index, GLfloat speed,
          Texture_Flip texture_flipping)
 {
     this->texture = load_texture(texture_location);
@@ -12,10 +12,12 @@ car::car(const char* texture_location, float x_position, float y_position, GLflo
     this->collider = nullptr;
     this->car_rotation = 0.0f;
     this->braking_factor = this->car_speed * BRAKING_FORCE;
+    this->steering_factor = 0.1f;
     this->acceleration_factor = ACCELETATION_FORCE / this->car_speed;
     this->update_car_position(x_position, y_position);
     this->draw_car();
     this->texture_flip = texture_flipping;
+    this->target_lane_index = road_lane_index;
 
     if(speed != DEFAULT_CAR_SPEED)
     {
@@ -280,28 +282,151 @@ void car::restore_previous_position()
 
 void car::move_downwards(float speed)
 {
-    //This function will move the car downwards - used for the traffic_cars
+    //This function will move the car downwards - used ONLY for the traffic_cars
 
-    float road_margin_left;
-    float road_margin_right;
-    float y_pos = this->y_pos + this->car_speed - speed;
+    float current_road_left_margin;
+    float current_road_right_margin;
+    float limited_steering_adjustment = 0;
 
-    bool margins_found = curvy_world::getRoadMargins(y_pos, road_margin_left, road_margin_right);
-    if(margins_found)
+    //Get road margins at the car's CURRENT Y-position
+
+    if(this->collider == nullptr) //if the car not in collision
     {
-        float distance_from_margin_left = this->x_pos - road_margin_left;
+        bool current_margins_found = curvy_world::getRoadMargins(this->y_pos, current_road_left_margin,
+                                                             current_road_right_margin);
 
-        this->y_pos = y_pos;
-        this->x_pos = road_margin_left + distance_from_margin_left;
-        this->update_car_position(this->x_pos, this->y_pos);
+        if (!current_margins_found)
+        {
+            //Handle car being outside the world
+            //The car will be removed by the traffic_spawner draw_traffic_cars()
+            return;
+        }
+
+        //IMPLEMENTATION TO FOLLOW THE ROAD LANES
+
+        // Calculate road width at the current Y-position
+        float current_road_width = current_road_right_margin - current_road_left_margin;
+
+        if (NUM_ROAD_LANES <= 0)
+        {
+            //If no lanes, just center the car on the road
+            this->target_lane_index = (NUM_ROAD_LANES > 0) ? this->target_lane_index : (NUM_ROAD_LANES / 2);
+            // Attempt to center if no lanes
+
+            // If NUM_ROAD_LANES is 0 or less, this will still result in target_lane_index being 0 or negative,
+            // which will need careful handling in the target_x_position calculation.
+        }
+
+        //Calculate lane width at the current Y-position
+        float current_lane_width = current_road_width / static_cast<float>(NUM_ROAD_LANES);
+
+        //Determine the car's target X position on the road at its current Y-position, based on the target lane
+        //Target lane index is 0-based.
+        float target_x_at_current_y = current_road_left_margin +
+                                      (static_cast<float>(this->target_lane_index) * current_lane_width) +
+                                      (current_lane_width / 2.0f);
+
+        //LOOK-AHEAD IMPLEMENTATION
+        int look_direction = this->car_speed > 0 ? 1 : -1; //if the car is going up we look up, else we look down
+
+        float look_ahead_y = this->y_pos + (LOOK_AHEAD_DISTANCE * look_direction);
+
+        float look_ahead_left_margin, look_ahead_right_margin;
+
+        //Grabbing the road margin coordinates after the look ahead distance
+        bool look_ahead_margins_found = curvy_world::getRoadMargins(look_ahead_y, look_ahead_left_margin,
+                                                                    look_ahead_right_margin);
+
+        float target_x_position; //This will be the final target X for steering
+
+        if (look_ahead_margins_found)
+        {
+            //Calculate road width and lane width at the look-ahead Y-position
+            float look_ahead_road_width = look_ahead_right_margin - look_ahead_left_margin;
+            float look_ahead_lane_width = look_ahead_road_width / static_cast<float>(NUM_ROAD_LANES);
+
+            //Determine the car's target X position on the road at its look-ahead Y-position, based on the target lane
+            float target_x_at_look_ahead_y = look_ahead_left_margin +
+                                             (static_cast<float>(this->target_lane_index) * look_ahead_lane_width) +
+                                             (look_ahead_lane_width / 2.0f);
+
+            //Use a simple blend of the current target and the look-ahead target.
+            //The blend factor determines the influence of the look-ahead.
+            //A factor of 0.0 means no look-ahead (target_x is based on current Y),
+            //1.0 means only look-ahead.
+            //0.5 means between the center of the road and the look-ahead target x, take half of the interval.
+
+            const float blend_factor = 0.5f;
+            target_x_position = (1.0f - blend_factor) * target_x_at_current_y + blend_factor * target_x_at_look_ahead_y;
+        }
+        else
+        {
+            //If look-ahead is outside the world, just use the current target
+            target_x_position = target_x_at_current_y;
+        }
+
+        //Calculate Steering Error
+        //The error is now between the car's current X and the combined target_x_position
+        float steering_error = target_x_position - this->x_pos;
+
+        //Apply Steering Adjustment
+        //The steering adjustment should be proportional to the error and a steering factor.
+        //The steering factor controls how quickly the car turns.
+        //A smaller steering factor means slower, smoother turns.
+        //A larger steering factor means faster, more responsive turns.
+        //The steering_factor should consist of a value between 0.0f and 1.0f.
+
+        //A simple proportional steering:
+        float steering_adjustment = steering_error * this->steering_factor;
+
+        //Limit the steering adjustment to prevent overshooting or abrupt movements
+        //You might want to limit this based on a maximum turning speed for the car.
+        limited_steering_adjustment = std::min(MAXIMUM_STEERING_ADJUSTMENT, steering_adjustment);
+        limited_steering_adjustment = std::max(-MAXIMUM_STEERING_ADJUSTMENT, limited_steering_adjustment);
     }
 
+    //Calculate the car's new Y-position
+    //speed is the player's speed affecting the relative movement.
+    float new_y_pos = this->y_pos + (this->car_speed - speed);
 
-    /*
-    this->previous_y_pos = this->y_pos;
 
+    //Calculate the car's new X-position by applying the steering adjustment
+    float new_x_pos = this->x_pos + limited_steering_adjustment;
+
+    //Update the car's position
+
+    //The rotation calculation is tied to the immediate X change.
+    int rotation_direction = this->car_speed > 0 ? -1 : 1; //if the car is going up we rotate one side, else the other side
+    this->car_rotation = rotation_direction*(new_x_pos - this->x_pos)*10;
+
+    this->y_pos = new_y_pos;
+    this->x_pos = new_x_pos;
     this->update_car_position(this->x_pos, this->y_pos);
-    */
+
+    //Clamping the car's X position to stay within the road boundaries AFTER steering
+    //This is a safety measure to prevent the car from driving off the road due to steering overshoot.
+
+    float new_road_left_margin, new_road_right_margin;
+
+    if(this->collider == nullptr) //if the car is not in collision
+    {
+        if (curvy_world::getRoadMargins(this->y_pos, new_road_left_margin, new_road_right_margin))
+        {
+            //CLAMPING THE CAR POSITION TO ALWAYS STICK TO THE ROAD:
+            //Clamp to the overall road margins, not just the target lane's boundaries.
+            //This prevents the car from leaving the road entirely.
+            float clamped_x = std::min(new_road_right_margin, this->x_pos);
+            this->x_pos = std::max(new_road_left_margin, clamped_x);
+            this->update_car_position(this->x_pos, this->y_pos); // Update position again after clamping
+        }
+        else
+        {
+            //If the new Y-position is outside the world
+            //If this is the case it will be removed by the traffic_spawner draw_traffic_cars()
+        }
+    }
+
+    //Draw the car regardless of movement
     this->draw_car();
 }
 

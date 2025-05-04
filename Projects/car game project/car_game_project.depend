@@ -290,7 +290,7 @@
 1746140945 source:c:\users\black\desktop\car game project\src\world_map.cpp
 	"world_map.h"
 
-1746209086 source:c:\users\black\desktop\car game project\src\hud.cpp
+1746373088 source:c:\users\black\desktop\car game project\src\hud.cpp
 	"../include/hud.h"
 
 1746203652 c:\users\black\desktop\car game project\include\hud.h
@@ -307,38 +307,38 @@
 	"../include/player.h"
 	"../include/traffic_spawner.h"
 
-1746300631 c:\users\black\desktop\car game project\include\player.h
+1746376988 c:\users\black\desktop\car game project\include\player.h
 	"../include/car.h"
 	"../include/cross_functions.h"
 
-1746308036 c:\users\black\desktop\car game project\include\car.h
+1746377103 c:\users\black\desktop\car game project\include\car.h
 	"../include/cross_functions.h"
 	"../include/world_map.h"
 	"../include/curvy_world.h"
 
-1746194903 source:c:\users\black\desktop\car game project\src\text_label.cpp
+1746367609 source:c:\users\black\desktop\car game project\src\text_label.cpp
 	"../include/text_label.h"
 
-1746308931 source:c:\users\black\desktop\car game project\src\car.cpp
+1746372974 source:c:\users\black\desktop\car game project\src\car.cpp
 	"car.h"
 
-1746309434 source:c:\users\black\desktop\car game project\src\game.cpp
+1746367216 source:c:\users\black\desktop\car game project\src\game.cpp
 	"../include/game.h"
 
-1746300709 source:c:\users\black\desktop\car game project\src\player.cpp
+1746365914 source:c:\users\black\desktop\car game project\src\player.cpp
 	"../include/player.h"
 
-1746306725 source:c:\users\black\desktop\car game project\src\traffic_spawner.cpp
+1746372538 source:c:\users\black\desktop\car game project\src\traffic_spawner.cpp
 	"../include/traffic_spawner.h"
 
-1746301695 c:\users\black\desktop\car game project\include\traffic_spawner.h
+1746371876 c:\users\black\desktop\car game project\include\traffic_spawner.h
 	"../include/cross_functions.h"
 	"../include/car.h"
 	"../include/curvy_world.h"
 
-1746310227 source:c:\users\black\desktop\car game project\src\curvy_world.cpp
+1746376967 source:c:\users\black\desktop\car game project\src\curvy_world.cpp
 	"../include/curvy_world.h"
 
-1746310235 c:\users\black\desktop\car game project\include\curvy_world.h
+1746375525 c:\users\black\desktop\car game project\include\curvy_world.h
 	"../include/cross_functions.h"
 

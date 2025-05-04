@@ -7,23 +7,25 @@
 #include "../include/curvy_world.h"
 
 //Constant defines
-#define CAR_WIDTH 40
-#define CAR_HEIGHT 100
-#define CAR_TURNING_FACTOR 0.2f
-#define CAR_ROTATION_FACTOR 2.0f
-#define DEFAULT_CAR_SPEED 5.0f
-#define ITERATIONS_FOR_COLOR_EFFECT 100
-#define COLORED_ITERATIONS_ON_COLOR_EFFECT 15
-#define IDLE_ITERATIONS_ON_COLOR_EFFECT 20
-#define OPACITY_FOR_COLOR_EFFECT 0.4f
+#define CAR_WIDTH 40 //Car object width in pixels
+#define CAR_HEIGHT 100 //Car object height in pixels
+#define CAR_TURNING_FACTOR 0.2f //A factor used to determine how much to steer/turn the car on a single loop iteration
+#define CAR_ROTATION_FACTOR 2.0f //A factor used to determine how much to rotate the car on a single loop iteration
+#define DEFAULT_CAR_SPEED 5.0f //A default value used to determine the car speed when building a car object
+#define ITERATIONS_FOR_COLOR_EFFECT 100 //time (in loop iterations) in which the color effect will take place
+#define COLORED_ITERATIONS_ON_COLOR_EFFECT 15 //time (in loop iterations) in which the color effect is VISIBLE.
+#define IDLE_ITERATIONS_ON_COLOR_EFFECT 20 //time (in loop iterations) in which the color effect is NOT visible.
+#define OPACITY_FOR_COLOR_EFFECT 0.4f //opacity for the color effects applied
 
-#define MINIMUM_TRAVELLING_SPEED 2.0f // it's important to be higher than 1, as we use this to also draw the world
-#define MAXIMUM_TRAVELLING_SPEED 20.0f
-#define BRAKING_FORCE 0.02f
-#define DECELERATION_FORCE 0.005f
-#define ACCELETATION_FORCE 2.0f
-#define MINIMUM_BRAKING_VALUE 0.1f
-#define MINIMUM_ACCELERATION_VALUE 0.1f
+#define MINIMUM_TRAVELLING_SPEED 2.0f //the minimum speed with which the car is allowed to travel
+#define MAXIMUM_TRAVELLING_SPEED 15.0f //the maximum speed with which the car is allowed to travel
+#define BRAKING_FORCE 0.02f  //a factor used to calculate a value for decrease the speed/brake based on the current car speed
+#define DECELERATION_FORCE 0.005f  //a factor used to calculate a value for decrease the speed based on the current car speed
+#define ACCELETATION_FORCE 2.0f //a factor used to calculate a value for increasing the speed based on the current car speed
+#define MINIMUM_BRAKING_VALUE 0.1f //determines the minimum braking value (used at high speeds)
+#define MINIMUM_ACCELERATION_VALUE 0.1f //determines the minimum acceleration value (used at high speeds)
+#define MAXIMUM_STEERING_ADJUSTMENT 5.0f //determines the maximum value of the steering
+#define LOOK_AHEAD_DISTANCE 50.0f // determines the distance to which the cars will see ahead to prepare for steering
 
 enum Texture_Flip
 {
@@ -62,8 +64,8 @@ struct Color_Effect
 class car
 {
     public:
-        car(const char* texture_location, float x_position, float y_position, GLfloat speed = DEFAULT_CAR_SPEED,
-             Texture_Flip texture_flipping = Texture_Flip::NORMAL);
+        car(const char* texture_location, float x_position, float y_position, int road_lane_index ,
+            GLfloat speed = DEFAULT_CAR_SPEED, Texture_Flip texture_flipping = Texture_Flip::NORMAL);
         virtual ~car();
 
         //Public functions:
@@ -95,6 +97,8 @@ class car
         GLfloat car_rotation;
         GLfloat braking_factor;
         GLfloat acceleration_factor;
+        GLfloat steering_factor;
+        int target_lane_index;
         car* collider;
 
     protected:

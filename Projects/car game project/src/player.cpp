@@ -6,7 +6,7 @@ player::player()
 {
     this->x_pos = DEFAULT_PLAYER_X_POS;
     this->y_pos = DEFAULT_PLAYER_Y_POS;
-    this->car_obj = new car(PLAYER_TEXTURE, this->x_pos, this->y_pos, DEFAULT_PLAYER_SPEED);
+    this->car_obj = new car(PLAYER_TEXTURE, this->x_pos, this->y_pos, 4, DEFAULT_PLAYER_SPEED);
 }
 
 player::~player()

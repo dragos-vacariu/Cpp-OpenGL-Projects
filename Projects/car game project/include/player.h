@@ -7,9 +7,9 @@
 
 //Constant defines
 #define PLAYER_TEXTURE IMG_RESOURCES "/car.png"
-#define DEFAULT_PLAYER_X_POS 230
+#define DEFAULT_PLAYER_X_POS 430
 #define DEFAULT_PLAYER_Y_POS 125
-#define DEFAULT_PLAYER_SPEED 20.0f
+#define DEFAULT_PLAYER_SPEED 15.0f
 
 class player
 {

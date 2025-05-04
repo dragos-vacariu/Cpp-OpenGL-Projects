@@ -32,23 +32,21 @@ void traffic_spawner::generate_traffic_car()
 {
     /*This function will generate a traffic car*/
 
-    float car_y = WINDOW_HEIGHT * 1.5f;
-
     float right_road_margin;
     float left_road_margin;
 
-    bool margins_found = curvy_world::getRoadMargins(car_y, left_road_margin, right_road_margin);
+    bool margins_found = curvy_world::getRoadMargins(RESPAWNING_Y_POS, left_road_margin, right_road_margin);
 
     if(margins_found)
     {
         GLfloat road_width = right_road_margin - left_road_margin;
-        GLfloat road_lane_size = road_width / 3; // Assuming 3 lanes
+        GLfloat road_lane_size = road_width / NUM_ROAD_LANES; // Assuming 3 lanes
 
         // Choose a random lane index (0, 1, or 2)
-        int road_line = (rand() % 3);
+        int road_line = (rand() % NUM_ROAD_LANES);
 
         // Calculate the X position of the CENTER of the chosen lane
-        GLfloat center_of_chosen_lane_x = left_road_margin + (road_line + 0.5f) * road_lane_size;
+        GLfloat center_of_chosen_lane_x = left_road_margin + (road_line * road_lane_size) + (road_lane_size/2);
 
         // The car's X position should be its center X position
         GLfloat x_pos = center_of_chosen_lane_x;
@@ -56,8 +54,19 @@ void traffic_spawner::generate_traffic_car()
         int texture_index = (rand() % this->car_textures.size());
 
         // Assuming the car constructor takes the center X position
-        this->traffic_cars.push_back(new car(this->car_textures[texture_index].c_str(), x_pos,
-                                             car_y, 7.0f, Texture_Flip::NORMAL));
+        if(road_line < 3)
+        {
+            //The cars are on the opposite side of the road, and they will face the bottom of the screen
+            this->traffic_cars.push_back(new car(this->car_textures[texture_index].c_str(), x_pos,
+                                             RESPAWNING_Y_POS, road_line, -7.0f, Texture_Flip::FLIP_VERTICALLY));
+        }
+        else
+        {
+            //The cars are on the opposite side of the road, and they will face the top of the screen
+            this->traffic_cars.push_back(new car(this->car_textures[texture_index].c_str(), x_pos,
+                                 RESPAWNING_Y_POS, road_line, 7.0f, Texture_Flip::NORMAL));
+        }
+
     }
 }
 
@@ -147,7 +156,7 @@ void traffic_spawner::draw_traffic_cars(float speed)
         // Vector is empty, generate a new traffic car
         this->generate_traffic_car();
     }
-    else if(this->traffic_cars[traffic_cars.size()-1]->y_pos < (WINDOW_HEIGHT/2))
+    else if( this->traffic_cars[traffic_cars.size()-1]->y_pos < (RESPAWNING_Y_POS-500) )
     {
         // Vector is not empty, check last car's position
         this->generate_traffic_car();

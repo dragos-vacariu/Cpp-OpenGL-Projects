@@ -9,6 +9,8 @@
 //Constant defines
 #define TRAFFIC_CAR_TEXTURE IMG_RESOURCES "/car2.png"
 
+#define RESPAWNING_Y_POS WINDOW_HEIGHT * 0.9f // this is the Y position on which the cars will be spawned
+
 using namespace std;
 
 class traffic_spawner

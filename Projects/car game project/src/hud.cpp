@@ -46,14 +46,14 @@ void hud::showGamePausedLabel()
 
 void hud::showExitGameDialog()
 {
-    this->exitGameLabel->Update_Text("Are you sure you want to EXIT GAME? Y/N", {0, 255, 255}, WINDOW_WIDTH/2-180, 150);
+    this->exitGameLabel->Update_Text("Are you sure you want to EXIT GAME? Y/N", {0, 255, 255}, (WINDOW_WIDTH/2)-180, 150);
 }
 
 void hud::showGameOverDialog()
 {
-    this->gameOverLabel->Update_Text("GAME OVER!", {255, 0, 0}, WINDOW_WIDTH/2-50, 150);
-    this->gameOverLabel->Update_Text("The car is wrecked!", {0, 255, 255}, WINDOW_WIDTH/2, 200);
-    this->gameOverLabel->Update_Text("Play again? Y/N", {255, 255, 255}, WINDOW_WIDTH+50, 250);
+    this->gameOverLabel->Update_Text("GAME OVER!", {255, 0, 0}, (WINDOW_WIDTH/2)-50, 150);
+    this->gameOverLabel->Update_Text("The car is wrecked!", {0, 255, 255}, (WINDOW_WIDTH/2)-100, 200);
+    this->gameOverLabel->Update_Text("Play again? Y/N", {255, 255, 255}, (WINDOW_WIDTH/2)-80, 250);
 }
 
 void hud::updateSpeedLabel(int speed)
@@ -73,5 +73,17 @@ void hud::updateDamageLabel(float damage)
     */
 
     damageText << "Damage: " << std::fixed << std::setprecision(1) << damage << "%";
-    this->damageLabel->Update_Text(damageText.str().c_str(), {0, 0, 0}, 10, WINDOW_HEIGHT-30);
+    if(damage > 80)
+    {
+        this->damageLabel->Update_Text(damageText.str().c_str(), {255, 0, 0}, 10, WINDOW_HEIGHT-30);
+    }
+    else if (damage > 40)
+    {
+        this->damageLabel->Update_Text(damageText.str().c_str(), {255, 0, 255}, 10, WINDOW_HEIGHT-30);
+    }
+    else
+    {
+        this->damageLabel->Update_Text(damageText.str().c_str(), {0, 0, 0}, 10, WINDOW_HEIGHT-30);
+    }
+
 }
